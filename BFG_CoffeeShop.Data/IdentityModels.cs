@@ -34,7 +34,7 @@ namespace BFG_CoffeeShop.Data
 
         //public DbSet<CoffeeShop> CoffeeShops { get; set; }
         //public DbSet<Menu> Menus { get; set; }
-        //public DbSet<CoffeeOrder> CoffeeOrders { get; set; }
+        public DbSet<CoffeeOrder> CoffeeOrders { get; set; }
         //public DbSet<Addition> Additions { get; set; }
         //public DbSet<Customer> Customers { get; set; }
 
