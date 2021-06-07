@@ -4,6 +4,7 @@ using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using BFG_CoffeeShop.WebAPI.Models;
+using BFG_CoffeeShop.Data;
 
 namespace BFG_CoffeeShop.WebAPI
 {

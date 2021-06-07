@@ -23,47 +23,47 @@ namespace BFG_CoffeeShop.Data
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
-        public ApplicationDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
+        public ApplicationDbContext() : base("DefaultConnection", throwIfV1Schema: false)
         {
         }
-        
+
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();
         }
+
+        //public DbSet<CoffeeShop> CoffeeShops { get; set; }
+        //public DbSet<Menu> Menus { get; set; }
+        //public DbSet<CoffeeOrder> CoffeeOrders { get; set; }
+        //public DbSet<Addition> Additions { get; set; }
+        //public DbSet<Customer> Customers { get; set; }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder
+                .Conventions
+                .Remove<PluralizingTableNameConvention>();
+
+            modelBuilder
+                .Configurations
+                .Add(new IdentityUserLoginConfiguration())
+                .Add(new IdentityUserRoleConfiguration());
+        }
     }
-    public DbSet<CoffeeShop> CoffeeShops { get; set; }
-    public DbSet<Menu> Menus { get; set; }
-    public DbSet<CoffeeOrder> CoffeeOrders { get; set; }
-    public DbSet<Addition> Additions { get; set; }
-    public DbSet<Customer> Customers { get; set; }
 
-
-    protected override void OnModelCreating(DbModelBuilder modelBuilder)
+    public class IdentityUserLoginConfiguration : EntityTypeConfiguration<IdentityUserLogin>
     {
-        modelBuilder
-            .Conventions
-            .Remove<PluralizingTableNameConvention>();
-
-        modelBuilder
-            .Configurations
-            .Add(new IdentityUserLoginConfiguration())
-            .Add(new IdentityUserRoleConfiguration());
+        public IdentityUserLoginConfiguration()
+        {
+            HasKey(IdentityUserLogin => IdentityUserLogin.UserId);
+        }
     }
-}
-public class IdentityUserLoginConfiguration : EntityTypeConfiguration<IdentityUserLogin>
-{
-    public IdentityUserLoginConfiguration()
-    {
-        HasKey(IdentityUserLogin => IdentityUserLogin.UserId);
-    }
-}
 
-public class IdentityUserRoleConfiguration : EntityTypeConfiguration<IdentityUserRole>
-{
-    public IdentityUserRoleConfiguration()
+    public class IdentityUserRoleConfiguration : EntityTypeConfiguration<IdentityUserRole>
     {
-        HasKey(iur => iur.UserId);
+        public IdentityUserRoleConfiguration()
+        {
+            HasKey(iur => iur.UserId);
+        }
     }
 }
