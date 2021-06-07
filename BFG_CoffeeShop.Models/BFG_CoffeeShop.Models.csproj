@@ -54,8 +54,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AdditionCreate.cs" />
-    <Compile Include="AdditionDetail.cs" />
+    <Compile Include="AdditionModels\AdditionCreate.cs" />
+    <Compile Include="AdditionModels\AdditionDetail.cs" />
+    <Compile Include="AdditionModels\AdditionEdit.cs" />
+    <Compile Include="AdditionModels\AdditionItemList.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
