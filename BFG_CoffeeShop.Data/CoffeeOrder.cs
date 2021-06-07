@@ -16,8 +16,7 @@ namespace BFG_CoffeeShop.Data
         public DateTimeOffset Created {get;set;}
         public DateTimeOffset? Edited { get; set; }
         public string Country { get; set; }
-        public double TotalPrice { get; set; }
-        [Required]
+        public decimal TotalPrice { get; set; }
         public string Barista { get; set; }
         public int AdditionId {get; set;}
         //[ForeignKey(nameof(AdditionId))]

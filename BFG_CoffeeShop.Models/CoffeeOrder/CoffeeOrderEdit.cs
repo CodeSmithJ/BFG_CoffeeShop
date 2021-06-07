@@ -9,8 +9,8 @@ namespace BFG_CoffeeShop.Models.CoffeeOrder
     public class CoffeeOrderEdit
     {
         public int CoffeeOrderId {get; set;}
-        public DateTimeOffset? Edited {get; set;}
         public int AdditionId {get; set;}
+        public int MenuID { get; set; }
         public string Barista {get; set;}
         public string Country {get;set;}
     }

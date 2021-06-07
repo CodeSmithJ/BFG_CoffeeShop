@@ -86,11 +86,35 @@
   <ItemGroup>
     <Compile Include="CoffeeOrder.cs" />
     <Compile Include="IdentityModels.cs" />
+    <Compile Include="Migrations\202106072217113_InitialCreate.cs" />
+    <Compile Include="Migrations\202106072217113_InitialCreate.Designer.cs">
+      <DependentUpon>202106072217113_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106072228512_firstMigrate.cs" />
+    <Compile Include="Migrations\202106072228512_firstMigrate.Designer.cs">
+      <DependentUpon>202106072228512_firstMigrate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106072254188_ChangedPriceToDecimal.cs" />
+    <Compile Include="Migrations\202106072254188_ChangedPriceToDecimal.Designer.cs">
+      <DependentUpon>202106072254188_ChangedPriceToDecimal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202106072217113_InitialCreate.resx">
+      <DependentUpon>202106072217113_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106072228512_firstMigrate.resx">
+      <DependentUpon>202106072228512_firstMigrate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106072254188_ChangedPriceToDecimal.resx">
+      <DependentUpon>202106072254188_ChangedPriceToDecimal.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

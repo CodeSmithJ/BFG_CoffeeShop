@@ -17,16 +17,17 @@ namespace BFG_CoffeeShop.Services
                 FullName = model.FullName,
                 Created = DateTimeOffset.Now,
                 AdditionId = model.AdditionId,
+                Barista = model.Barista,
                 CustomerId = model.CustomerId,
                 MenuId = model.MenuId,
-                TotalPrice = model.TotalPrice,
+                TotalPrice = Math.Round(model.TotalPrice,2),
                 Country = model.Country
             };
 
             using (var ctx = new ApplicationDbContext())
             {
                 ctx.CoffeeOrders.Add(entity);
-                return ctx.SaveChanges() >= 1;
+                return ctx.SaveChanges() == 1;
             }
         }
 
@@ -45,31 +46,8 @@ namespace BFG_CoffeeShop.Services
                                 CustomerId = e.CustomerId,
                                 MenuId = e.MenuId,
                                 AdditionId = e.AdditionId,
-                                TotalPrice = e.TotalPrice
-                            }
-                        );
-                return query.ToArray();
-            }
-        }
-
-        /*
-        public IEnumerable<NoteListItem> GetStarred()
-        {
-            using (var ctx = new ApplicationDbContext())
-            {
-                var query =
-                    ctx
-                        .CoffeeOrders
-                        .Where(e => e.OwnerId == _userId && e.IsStarred == true)
-                        .Select(
-                        e =>
-                            new NoteListItem
-                            {
-                                NoteId = e.NoteId,
-                                Title = e.Title,
-                                IsStarred = e.IsStarred,
-                                CategoryId = e.CategoryId,
-                                CreatedUtc = e.CreatedUtc
+                                TotalPrice = e.TotalPrice,
+                                Created = e.Created
                             }
                         );
                 return query.ToArray();
@@ -85,13 +63,23 @@ namespace BFG_CoffeeShop.Services
                     .CoffeeOrders
                     .Single(e => e.CoffeeOrderId == id);
                 return
-                    new CoffeeOrderDetail
+                    new CoffeeOrderDetail()
                     {
-                        entity.
+                        CoffeeOrderId = entity.CoffeeOrderId,
+                        FullName = entity.FullName,
+                        Country = entity.Country,
+                        CustomerId = entity.CustomerId,
+                        Barista = entity.Barista,
+                        MenuId = entity.MenuId,
+                        AdditionId = entity.AdditionId,
+                        TotalPrice = entity.TotalPrice,
+                        Created = entity.Created,
+                        Edited = entity.Edited
                     };
             }
         }
 
+        
         public bool UpdateCoffeeOrder(CoffeeOrderEdit model)
         {
             using (var ctx = new ApplicationDbContext())
@@ -103,27 +91,29 @@ namespace BFG_CoffeeShop.Services
 
                 entity.Barista = model.Barista;
                 entity.AdditionId = model.AdditionId;
+                entity.Edited = DateTimeOffset.Now;
                 entity.Country = model.Country;
+                entity.MenuId = model.MenuID;
 
                 return ctx.SaveChanges() == 1;
             }
         }
 
-        public bool DeleteNote(int noteId)
+        
+        public bool DeleteCoffeeOrder(int CoffeeOrderId)
         {
             using (var ctx = new ApplicationDbContext())
             {
                 var entity =
                     ctx
-                        .Notes
-                        .Single(e => e.NoteId == noteId && e.OwnerId == _userId);
+                        .CoffeeOrders
+                        .Single(e => e.CoffeeOrderId == CoffeeOrderId);
 
-                ctx.Notes.Remove(entity);
+                ctx.CoffeeOrders.Remove(entity);
 
                 return ctx.SaveChanges() == 1;
             }
         }
-    
-        */
+        
     }
 }

@@ -16,41 +16,39 @@ namespace BFG_CoffeeShop.WebAPI.Controllers
         public IHttpActionResult Get()
         {
             var CoffeeOrder = new CoffeeOrderService();
-            var cat = CoffeeOrder.GetCoffeeOrders();
-            return Ok(cat);
+            var coffee = CoffeeOrder.GetCoffeeOrders();
+            return Ok(coffee);
         }
 
-        /*
         public IHttpActionResult Get(int id)
         {
-            var CategoryService = CreateCategory();
-            var cat = CategoryService.GetCategoryById(id);
-            return Ok(cat);
+            var CoffeeOrder = new CoffeeOrderService();
+            var coffee = CoffeeOrder.GetCoffeeOrderById(id);
+            return Ok(coffee);
         }
-        */
-
-        public IHttpActionResult Post(CoffeeOrderCreate Category)
+        
+        public IHttpActionResult Post(CoffeeOrderCreate Coffee)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
             var service = new CoffeeOrderService();
 
-            if (!service.CreateCoffeeOrder(Category))
+            if (!service.CreateCoffeeOrder(Coffee))
                 return InternalServerError();
 
             return Ok(service);
         }
 
-        /*
-        public IHttpActionResult Put(CategoryEdit Category)
+        
+        public IHttpActionResult Put(CoffeeOrderEdit Coffee)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
-            var service = CreateCategory();
+            var service = new CoffeeOrderService();
 
-            if (!service.UpdateCategory(Category))
+            if (!service.UpdateCoffeeOrder(Coffee))
                 return InternalServerError();
 
             return Ok(service);
@@ -58,14 +56,12 @@ namespace BFG_CoffeeShop.WebAPI.Controllers
 
         public IHttpActionResult Delete(int id)
         {
-            var service = CreateCategory();
+            var service = new CoffeeOrderService();
 
-            if (!service.DeleteCategory(id))
+            if (!service.DeleteCoffeeOrder(id))
                 return InternalServerError();
 
-            return Ok($"Category with Id #{id} has been deleted");
+            return Ok($"CoffeeOrder with Id #{id} has been deleted");
         }
-        */
-        
     }
 }
