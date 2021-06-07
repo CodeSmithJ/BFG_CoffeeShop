@@ -10,6 +10,7 @@ using Microsoft.Owin.Security.OAuth;
 using Owin;
 using BFG_CoffeeShop.WebAPI.Providers;
 using BFG_CoffeeShop.WebAPI.Models;
+using BFG_CoffeeShop.Data;
 
 namespace BFG_CoffeeShop.WebAPI
 {

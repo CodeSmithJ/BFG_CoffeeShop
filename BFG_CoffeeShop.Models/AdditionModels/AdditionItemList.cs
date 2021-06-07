@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BFG_CoffeeShop.Models
+namespace BFG_CoffeeShop.Models.AdditionModels
 {
-    public class Class1
+    public class AdditionItemList
     {
+
     }
 }
