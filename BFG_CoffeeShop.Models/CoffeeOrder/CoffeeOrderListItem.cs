@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BFG_CoffeeShop.Models.CoffeeOrder
 {
-    public class CoffeeOrderListItems
+    public class CoffeeOrderListItem
     {
         public int CoffeeOrderId { get; set; }
         public DateTimeOffset Created { get; set; }

@@ -57,7 +57,7 @@
     <Compile Include="CoffeeOrder\CoffeeOrderCreate.cs" />
     <Compile Include="CoffeeOrder\CoffeeOrderDetail.cs" />
     <Compile Include="CoffeeOrder\CoffeeOrderEdit.cs" />
-    <Compile Include="CoffeeOrder\CoffeeOrderListItems.cs" />
+    <Compile Include="CoffeeOrder\CoffeeOrderListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
