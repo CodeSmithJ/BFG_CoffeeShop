@@ -54,7 +54,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="MenuModels\MenuCreate.cs" />
+    <Compile Include="MenuModels\MenuDetail.cs" />
+    <Compile Include="MenuModels\MenuEdit.cs" />
+    <Compile Include="MenuModels\MenuListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -67,5 +70,6 @@
       <Name>BFG_CoffeeShop.Data</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

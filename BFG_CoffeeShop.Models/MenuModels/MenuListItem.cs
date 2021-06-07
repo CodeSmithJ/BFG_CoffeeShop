@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BFG_CoffeeShop.Data
+namespace BFG_CoffeeShop.Models.MenuModels
 {
-    public class Class1
+    class MenuListItem
     {
     }
 }
