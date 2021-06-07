@@ -13,9 +13,9 @@ namespace BFG_CoffeeShop.Data
         public int MenuId { get; set; }
         
         [Required]
-        public string MenuName { get; set; }
+        public string ItemName { get; set; }
         
-        public List<string> MenuList { get; set; }
+        //public List<string> MenuList { get; set; }
         
         [Required]
         public double ItemPrice { get; set; }

@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace BFG_CoffeeShop.Models.MenuModels
 {
-    class MenuEdit
+    public class MenuEdit
     {
+        public int MenuId { get; set; }
+
+        public string ItemName { get; set; }
+
+        public double ItemPrice { get; set; }
     }
 }
