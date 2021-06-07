@@ -72,6 +72,7 @@ namespace BFG_CoffeeShop.Services
                     .Additions
                     .Single(e => e.AdditionId == edit.AdditionId);
                 entity.Name = edit.Name;
+                entity.Price = edit.Price;
                 return ctx.SaveChanges() == 1;
             }
         }

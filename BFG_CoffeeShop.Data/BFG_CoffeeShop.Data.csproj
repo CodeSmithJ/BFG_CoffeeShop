@@ -86,11 +86,21 @@
   <ItemGroup>
     <Compile Include="Addition.cs" />
     <Compile Include="IdentityModels.cs" />
+    <Compile Include="Migrations\202106071948186_InitalMigration.cs" />
+    <Compile Include="Migrations\202106071948186_InitalMigration.Designer.cs">
+      <DependentUpon>202106071948186_InitalMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202106071948186_InitalMigration.resx">
+      <DependentUpon>202106071948186_InitalMigration.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
