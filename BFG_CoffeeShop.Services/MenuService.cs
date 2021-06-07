@@ -61,5 +61,37 @@ namespace BFG_CoffeeShop.Services
                     };
             }
         }
+
+        public bool UpdateMenu(MenuEdit model)
+        {
+            using(var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Menus
+                        .Single(e => e.MenuId == model.MenuId);
+
+                entity.MenuId = model.MenuId;
+                entity.ItemName = model.ItemName;
+                entity.ItemPrice = model.ItemPrice;
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
+
+        public bool DeleteMenu(int menuId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Menus
+                        .Single(e => e.MenuId == menuId);
+
+                ctx.Menus.Remove(entity);
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
     }
 }
