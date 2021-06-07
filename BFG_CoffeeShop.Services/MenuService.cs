@@ -24,5 +24,42 @@ namespace BFG_CoffeeShop.Services
                 return ctx.SaveChanges() == 1;
             }
         }
+
+        public IEnumerable<MenuListItem> GetMenus()
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var query =
+                    ctx
+                        .Menus
+                        .Select(
+                            e =>
+                                new MenuListItem
+                                {
+                                    MenuId = e.MenuId,
+                                    ItemName = e.ItemName,
+                                }
+                        );
+                return query.ToArray();
+            }
+        }
+
+        public MenuDetail GetMenuById(int id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Menus
+                        .Single(e => e.MenuId == id);
+                return
+                    new MenuDetail
+                    {
+                        MenuId = entity.MenuId,
+                        ItemName = entity.ItemName,
+                        ItemPrice = entity.ItemPrice
+                    };
+            }
+        }
     }
 }
