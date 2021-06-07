@@ -19,6 +19,6 @@ namespace BFG_CoffeeShop.Models.CustomerModels
         [Required]
         public string PaymentType { get; set; }
 
-        //      public List<FavoriteOrder> FavoriteOrders { get; set; }
+//      public List<FavoriteOrder> FavoriteOrders { get; set; }
     }
 }

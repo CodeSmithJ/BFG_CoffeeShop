@@ -9,11 +9,6 @@ namespace BFG_CoffeeShop.Models.CustomerModels
 {
     public class CustomerDetails
     {
-        [Key]
-        public int CustomerId { get; set; }
-
-        [Required]
-        public Guid CustomerTag { get; set; }
 
         [Required]
         public string FirstName { get; set; }
@@ -24,6 +19,6 @@ namespace BFG_CoffeeShop.Models.CustomerModels
         [Required]
         public string PaymentType { get; set; }
 
-        //      public List<FavoriteOrder> FavoriteOrders { get; set; }
+//      public List<FavoriteOrder> FavoriteOrders { get; set; }
     }
 }
