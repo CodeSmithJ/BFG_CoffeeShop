@@ -16,6 +16,11 @@ namespace BFG_CoffeeShop.Services
             {
                 FullName = model.FullName,
                 Created = DateTimeOffset.Now,
+                //    AdditionId = model.AdditionId,
+                Barista = model.Barista,
+                //    CustomerId = model.CustomerId,
+                //    MenuId = model.MenuId,
+                TotalPrice = Math.Round(model.TotalPrice, 2),
             //    AdditionId = model.AdditionId,
                 Barista = model.Barista,
             //    CustomerId = model.CustomerId,
@@ -43,6 +48,9 @@ namespace BFG_CoffeeShop.Services
                             new CoffeeOrderListItem
                             {
                                 CoffeeOrderId = e.CoffeeOrderId,
+                                //  CustomerId = e.CustomerId,
+                                //  MenuId = e.MenuId,
+                                //  AdditionId = e.AdditionId,
                               //  CustomerId = e.CustomerId,
                               //  MenuId = e.MenuId,
                               //  AdditionId = e.AdditionId,
@@ -68,6 +76,10 @@ namespace BFG_CoffeeShop.Services
                         CoffeeOrderId = entity.CoffeeOrderId,
                         FullName = entity.FullName,
                         Country = entity.Country,
+                        // CustomerId = entity.CustomerId,
+                        Barista = entity.Barista,
+                        // MenuId = entity.MenuId,
+                        // AdditionId = entity.AdditionId,
                        // CustomerId = entity.CustomerId,
                         Barista = entity.Barista,
                        // MenuId = entity.MenuId,
@@ -78,8 +90,6 @@ namespace BFG_CoffeeShop.Services
                     };
             }
         }
-
-        
         public bool UpdateCoffeeOrder(CoffeeOrderEdit model)
         {
             using (var ctx = new ApplicationDbContext())
@@ -90,16 +100,17 @@ namespace BFG_CoffeeShop.Services
                         .Single(e => e.CoffeeOrderId == model.CoffeeOrderId);
 
                 entity.Barista = model.Barista;
+                //  entity.AdditionId = model.AdditionId;
+                entity.Edited = DateTimeOffset.Now;
+                entity.Country = model.Country;
+                //  entity.MenuId = model.MenuID;
               //  entity.AdditionId = model.AdditionId;
                 entity.Edited = DateTimeOffset.Now;
                 entity.Country = model.Country;
               //  entity.MenuId = model.MenuID;
-
                 return ctx.SaveChanges() == 1;
             }
         }
-
-        
         public bool DeleteCoffeeOrder(int CoffeeOrderId)
         {
             using (var ctx = new ApplicationDbContext())
@@ -114,6 +125,5 @@ namespace BFG_CoffeeShop.Services
                 return ctx.SaveChanges() == 1;
             }
         }
-        
     }
 }

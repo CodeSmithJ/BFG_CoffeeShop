@@ -1,18 +1,21 @@
+﻿using BFG_CoffeeShop.Models.CoffeeOrder;
 ﻿using BFG_CoffeeShop.Data;
 using BFG_CoffeeShop.Models.CoffeeOrder;
 using BFG_CoffeeShop.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
+using System.Net.Http;
 using System.Web;
 using System.Web.Http;
 
 namespace BFG_CoffeeShop.WebAPI.Controllers
 {
-   
     public class CoffeeOrderController : ApiController
     {
-       
+    public class CoffeeOrderController : ApiController
+    {
         public IHttpActionResult Get()
         {
             var CoffeeOrder = new CoffeeOrderService();
@@ -26,7 +29,6 @@ namespace BFG_CoffeeShop.WebAPI.Controllers
             var coffee = CoffeeOrder.GetCoffeeOrderById(id);
             return Ok(coffee);
         }
-        
         public IHttpActionResult Post(CoffeeOrderCreate Coffee)
         {
             if (!ModelState.IsValid)
@@ -39,8 +41,6 @@ namespace BFG_CoffeeShop.WebAPI.Controllers
 
             return Ok(service);
         }
-
-        
         public IHttpActionResult Put(CoffeeOrderEdit Coffee)
         {
             if (!ModelState.IsValid)

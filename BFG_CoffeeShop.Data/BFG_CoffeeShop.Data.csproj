@@ -84,7 +84,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-
+    <Compile Include="CoffeeShop.cs" />
     <Compile Include="CoffeeOrder.cs" />
     <Compile Include="IdentityModels.cs" />
     <Compile Include="Migrations\202106072217113_InitialCreate.cs" />
@@ -98,13 +98,11 @@
     <Compile Include="Migrations\202106072254188_ChangedPriceToDecimal.cs" />
     <Compile Include="Migrations\202106072254188_ChangedPriceToDecimal.Designer.cs">
       <DependentUpon>202106072254188_ChangedPriceToDecimal.cs</DependentUpon>
-
     <Compile Include="Customer.cs" />
     <Compile Include="IdentityModels.cs" />
     <Compile Include="Migrations\202106071945512_First Migration.cs" />
     <Compile Include="Migrations\202106071945512_First Migration.Designer.cs">
       <DependentUpon>202106071945512_First Migration.cs</DependentUpon>
-
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -114,7 +112,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-
     <EmbeddedResource Include="Migrations\202106072217113_InitialCreate.resx">
       <DependentUpon>202106072217113_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
