@@ -84,11 +84,27 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+
+    <Compile Include="CoffeeOrder.cs" />
+    <Compile Include="IdentityModels.cs" />
+    <Compile Include="Migrations\202106072217113_InitialCreate.cs" />
+    <Compile Include="Migrations\202106072217113_InitialCreate.Designer.cs">
+      <DependentUpon>202106072217113_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106072228512_firstMigrate.cs" />
+    <Compile Include="Migrations\202106072228512_firstMigrate.Designer.cs">
+      <DependentUpon>202106072228512_firstMigrate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106072254188_ChangedPriceToDecimal.cs" />
+    <Compile Include="Migrations\202106072254188_ChangedPriceToDecimal.Designer.cs">
+      <DependentUpon>202106072254188_ChangedPriceToDecimal.cs</DependentUpon>
+
     <Compile Include="Customer.cs" />
     <Compile Include="IdentityModels.cs" />
     <Compile Include="Migrations\202106071945512_First Migration.cs" />
     <Compile Include="Migrations\202106071945512_First Migration.Designer.cs">
       <DependentUpon>202106071945512_First Migration.cs</DependentUpon>
+
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -98,8 +114,19 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+
+    <EmbeddedResource Include="Migrations\202106072217113_InitialCreate.resx">
+      <DependentUpon>202106072217113_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106072228512_firstMigrate.resx">
+      <DependentUpon>202106072228512_firstMigrate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106072254188_ChangedPriceToDecimal.resx">
+      <DependentUpon>202106072254188_ChangedPriceToDecimal.cs</DependentUpon>
+
     <EmbeddedResource Include="Migrations\202106071945512_First Migration.resx">
       <DependentUpon>202106071945512_First Migration.cs</DependentUpon>
+
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
