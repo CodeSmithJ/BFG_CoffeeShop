@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,11 +21,13 @@ namespace BFG_CoffeeShop.Data
 
         [Required]
         public string LastName { get; set; }
-
         public string FullName => FirstName + LastName;
 
         [Required]
         public string PaymentType { get; set; }
+
+        [ForeignKey("CoffeeOrder")]
+        public int CoffeeOrderId { get; set; }
 
 //      public List<FavoriteOrder> FavoriteOrders { get; set; }
     }
