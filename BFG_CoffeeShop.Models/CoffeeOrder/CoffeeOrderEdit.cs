@@ -13,5 +13,10 @@ namespace BFG_CoffeeShop.Models.CoffeeOrder
         public int MenuID { get; set; }
         public string Barista { get; set; }
         public string Country { get; set; }
+        public int CoffeeOrderId {get; set;}
+        public int AdditionId {get; set;}
+        public int MenuID { get; set; }
+        public string Barista {get; set;}
+        public string Country {get;set;}
     }
 }

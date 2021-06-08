@@ -17,3 +17,11 @@ namespace BFG_CoffeeShop.Models.CoffeeOrder
         public int MenuId { get; set; }
     }
 }
+        public string Country {get;set;}
+        public string Barista {get; set;}
+        public decimal TotalPrice {get; set;}
+        public int AdditionId {get; set;}
+        public int CustomerId {get; set;}
+        public int MenuId {get; set;}
+    }
+}
