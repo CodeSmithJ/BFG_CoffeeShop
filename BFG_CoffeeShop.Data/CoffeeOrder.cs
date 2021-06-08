@@ -18,14 +18,10 @@ namespace BFG_CoffeeShop.Data
         public string Country { get; set; }
         public decimal TotalPrice { get; set; }
         public string Barista { get; set; }
-        public int AdditionId {get; set;}
-        //[ForeignKey(nameof(AdditionId))]
         //List<Addition> Additions { get; set; }
-        public int CustomerId { get; set; }
-        //[ForeignKey(nameof(CustomerId))]
+
         //List<Customer> Customers { get; set; }
-        public int MenuId { get; set; }
-        //[ForeignKey(nameof(CustomerId))]
-        //List<Customer> Customers { get; set; }  
+
+        //List<Menu> Menus { get; set; }  
     }
 }
