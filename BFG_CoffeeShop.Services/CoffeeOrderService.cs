@@ -22,6 +22,7 @@ namespace BFG_CoffeeShop.Services
                 //    MenuId = model.MenuId,
                 TotalPrice = Math.Round(model.TotalPrice, 2),
             //    AdditionId = model.AdditionId,
+            // new Comment
                 Barista = model.Barista,
             //    CustomerId = model.CustomerId,
             //    MenuId = model.MenuId,
